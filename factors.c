@@ -1,32 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * main - main function
+ *
+ *
+ * Return: void
+ */
 
 int main(int argc, char *argv[])
 {
+	 FILE *fp;
+	 int number;
+
     if (argc != 2)
 {
         fprintf(stderr, "Usage: factors <file>\n");
         return 1;
     }
 
-    FILE *fp = fopen(argv[1], "r");
-    if (fp == NULL) {
-        perror("fopen");
-        return 1;
-    }
 
-    int number;
+    fp = fopen(argv[1], "r");
+
     while (fscanf(fp, "%d", &number) == 1)
 {
-        for (int i = 2; i * i <= number; i++)
+        int i;
+
+        for (i = 2; i * i <= number; i++)
 {
-            if (number % i == 0)
-{
-                int factor1 = i;
-                int factor2 = number / i;
-                printf("%d=%d*%d\n", number, factor1, factor2);
-                break; // Find only one factorization
-            }
+
         }
     }
 
